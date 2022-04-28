@@ -1,6 +1,6 @@
 defmodule Tco do
   def tco_map(f, [h|t]), do: [f.(h)] ++ tco_map(f, t)
-  def tco_map(f, []), do: []
+  def tco_map(f, []) when is_function(f, 1), do: []
 
   def find_asm(module, fun) do
     module
